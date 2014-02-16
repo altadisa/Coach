@@ -1,3 +1,5 @@
+smartDocs = 'Study Sencha Docs <a href=\"http://beginsmarter.com/oss/sencha/ext-4.2.1.883/docs/\">here</a>'
+
 Ext.define('Lifecoach.view.Main', {
     extend: 'Ext.container.Container',
     requires:[
@@ -14,13 +16,15 @@ Ext.define('Lifecoach.view.Main', {
     items: [{
         region: 'west',
         xtype: 'panel',
-        title: 'west',
+        title: 'Function',
+        html: smartDocs,
         width: 150
     },{
         region: 'center',
         xtype: 'tabpanel',
         items:[{
-            title: 'Center Tab 1'
+            title: 'Contents',
+            html: 'it works!'
         }]
     }]
 });

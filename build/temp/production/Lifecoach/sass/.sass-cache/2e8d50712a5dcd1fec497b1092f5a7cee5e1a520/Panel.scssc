@@ -1,0 +1,689 @@
+3.1.7 (Brainy Betty)
+09c6e52943634bd8778d43b0a55f39be051227a6
+o:Sass::Tree::RootNode
+:@has_childrenT:
+@linei:@template"·/**
+ * @class Ext.panel.Panel
+ */
+
+// TODO: setting this probably doesn't work well, since border-radius is typically
+// reserved for framed-panels - should we remove this?
+$panel-border-radius: null !default;
+
+/**
+ * @var {number}
+ * The default border-width of Panels
+ */
+$panel-border-width: 1px !default;
+
+/**
+ * @var {color}
+ * The base color of Panels
+ */
+$panel-base-color: $base-color !default;
+
+/**
+ * @var {color}
+ * The default border-color of Panels
+ */
+$panel-border-color: $panel-base-color !default;
+
+/**
+ * @var {$border-width-threshold}
+ * The maximum width a Panel's border can be before resizer handles are embedded into the borders using negative absolute positions.
+ *
+ * This defaults to 2, so that in the classic theme which uses 1 pixel borders, resize handles are in the content area
+ * within the border as they always have been.
+ *
+ * In the Neptune theme, the handles are embedded into the 5 pixel wide borders of any framed panel.
+ */
+$border-width-threshold: 2 !default;
+
+// ===============================
+// ========= PANEL BODY ==========
+// ===============================
+/**
+ * @var {string}
+ * The default border-style of Panels
+ */
+$panel-body-border-style: solid !default;
+
+/**
+ * @var {color}
+ * The default body background-color of Panels
+ */
+$panel-body-background-color: #fff !default;
+
+/**
+ * @var {color}
+ * The default color of text inside a Panel's body
+ */
+$panel-body-color: #000 !default;
+
+/**
+ * @var {color}
+ * The default border-color of the Panel body
+ */
+$panel-body-border-color: $panel-border-color !default;
+
+/**
+ * @var {number}
+ * The default border-width of the Panel body
+ */
+$panel-body-border-width: 1px !default;
+
+/**
+ * @var {number}
+ * The default font-size of the Panel body
+ */
+$panel-body-font-size: $font-size !default;
+
+/**
+ * @var {string}
+ * The default font-weight of the Panel body
+ */
+$panel-body-font-weight: normal !default;
+
+/**
+ * @var {number}
+ * The space between the Panel {@link Ext.panel.Tool Tools}
+ */
+$panel-tool-spacing: 4px !default;
+
+/**
+ * @var {string}
+ * The background sprite to use for Panel {@link Ext.panel.Tool Tools}
+ */
+$panel-tool-background-image: 'tools/tool-sprites' !default;
+
+/**
+ * @var {number}
+ * The border-width of Panel Headers
+ */
+$panel-header-border-width: $panel-border-width !default;
+
+/**
+ * @var {string}
+ * The border-style of Panel Headers
+ */
+$panel-header-border-style: solid !default;
+
+/**
+ * @var {number/list}
+ * The padding of Panel Headers
+ */
+$panel-header-padding: 4px 5px !default;
+
+/**
+ * @var {number}
+ * The font-size of Panel Headers
+ */
+$panel-header-font-size: $font-size !default;
+
+/**
+ * @var {number}
+ * The line-height of Panel Headers
+ */
+$panel-header-line-height: 16px !default;
+
+/**
+ * @var {string}
+ * The font-weight of Panel Headers
+ */
+$panel-header-font-weight: bold !default;
+
+/**
+ * @var {string}
+ * The font-family of Panel Headers
+ */
+$panel-header-font-family: $font-family !default;
+
+/**
+ * @var {string}
+ * The text-transform of Panel Headers
+ */
+$panel-header-text-transform: none !default;
+
+/**
+ * @var {number/list}
+ * The padding of the Panel Header's text element
+ */
+$panel-header-text-padding: 0 !default;
+
+/**
+ * @var {string/list}
+ * The background-gradient of the Panel Header. Can be either the name of a predefined
+ * gradient or a list of color stops. Used as the `$type` parameter for
+ * {@link Global_CSS#background-gradient}.
+ */
+$panel-header-background-gradient: null !default;
+
+/**
+ * @var {color}
+ * The border-color of the Panel Header
+ */
+$panel-header-border-color: $panel-border-color !default;
+
+/**
+ * @var {color}
+ * The inner border-color of the Panel Header
+ */
+$panel-header-inner-border-color: #fff !default;
+
+/**
+ * @var {number}
+ * The inner border-width of the Panel Header
+ */
+$panel-header-inner-border-width: 0 !default;
+
+/**
+ * @var {color}
+ * The text color of the Panel Header
+ */
+$panel-header-color: $color !default;
+
+/**
+ * @var {color}
+ * The background-color of the Panel Header
+ */
+$panel-header-background-color: $panel-base-color !default;
+
+/**
+ * @var {number}
+ * The width of the Panel Header icon
+ */
+$panel-header-icon-width: 16px !default;
+
+/**
+ * @var {number}
+ * The height of the Panel Header icon
+ */
+$panel-header-icon-height: 16px !default;
+
+/**
+ * @var {number}
+ * The space between the Panel Header icon and text
+ */
+$panel-header-icon-spacing: 4px !default;
+
+/**
+ * @var {list}
+ * The background-position of  the Panel Header icon
+ */
+$panel-header-icon-background-position: center center !default;
+
+/**
+ * @var {color}
+ * The color of the Panel Header glyph icon
+ */
+$panel-header-glyph-color: $panel-header-color !default;
+
+/**
+ * @var {number}
+ * The opacity of the Panel Header glyph icon
+ */
+$panel-header-glyph-opacity: .5 !default;
+
+/**
+ * @var {color}
+ * The base color of the framed Panels
+ */
+$panel-frame-base-color: $panel-base-color !default;
+
+/**
+ * @var {number}
+ * The border-radius of framed Panels
+ */
+$panel-frame-border-radius: 4px !default;
+
+/**
+ * @var {number}
+ * The border-width of framed Panels
+ */
+$panel-frame-border-width: 1px !default;
+
+/**
+ * @var {string}
+ * The border-style of framed Panels
+ */
+$panel-frame-border-style: solid !default;
+
+/**
+ * @var {number}
+ * The padding of framed Panels
+ */
+$panel-frame-padding: 4px !default;
+
+/**
+ * @var {color}
+ * The background-color of framed Panels
+ */
+$panel-frame-background-color: #fff !default;
+
+/**
+ * @var {color}
+ * The border-color of framed Panels
+ */
+$panel-frame-border-color: $panel-border-color !default;
+
+/**
+ * @var {number}
+ * The border-width of the body element of framed Panels
+ */
+$panel-frame-body-border-width: 1px !default;
+
+/**
+ * @var {number}
+ * The border-width of framed Panel Headers
+ */
+$panel-frame-header-border-width: $panel-header-border-width !default;
+
+/**
+ * @var {color}
+ * The inner border-color of framed Panel Headers
+ */
+$panel-frame-header-inner-border-color: #fff !default;
+
+/**
+ * @var {number}
+ * The inner border-width of framed Panel Headers
+ */
+$panel-frame-header-inner-border-width: 0 !default;
+
+/**
+ * @var {number/list}
+ * The padding of framed Panel Headers
+ */
+$panel-frame-header-padding: $panel-header-padding !default;
+
+/**
+ * @var {number}
+ * The opacity of ghost Panels while dragging
+ */
+$panel-ghost-opacity: 0.50 !default;
+
+/**
+ * @var {string}
+ * The direction to strech the background-gradient of top docked Headers when slicing images
+ * for IE using Sencha Cmd
+ */
+$panel-background-stretch-top: bottom !default;
+
+/**
+ * @var {string}
+ * The direction to strech the background-gradient of bottom docked Headers when slicing images
+ * for IE using Sencha Cmd
+ */
+$panel-background-stretch-bottom: top !default;
+
+/**
+ * @var {string}
+ * The direction to strech the background-gradient of right docked Headers when slicing images
+ * for IE using Sencha Cmd
+ */
+$panel-background-stretch-right: left !default;
+
+/**
+ * @var {string}
+ * The direction to strech the background-gradient of left docked Headers when slicing images
+ * for IE using Sencha Cmd
+ */
+$panel-background-stretch-left: right !default;
+
+/**
+ * @var {boolean}
+ * True to include neptune style border management rules.
+ */
+$panel-include-border-management-rules: false !default;
+
+/**
+ * @var {color}
+ * The color to apply to the border that wraps the body and docked items in a framed
+ * panel. The presence of the wrap border in a framed panel is controlled by the
+ * {@link #border} config. Only applicable when `$panel-include-border-management-rules` is
+ * `true`.
+ */
+$panel-wrap-border-color: $panel-border-color !default;
+
+/**
+ * @var {number}
+ * The width to apply to the border that wraps the body and docked items in a framed
+ * panel. The presence of the wrap border in a framed panel is controlled by the
+ * {@link #border} config. Only applicable when `$panel-include-border-management-rules` is
+ * `true`.
+ */
+$panel-wrap-border-width: 1px !default;
+
+/**
+ * @var {boolean}
+ * True to include the "default" panel UI
+ */
+$include-panel-default-ui: $include-default-uis !default;
+
+/**
+ * @var {boolean}
+ * True to include the "default-framed" panel UI
+ */
+$include-panel-default-framed-ui: $include-default-uis !default;
+:@options{ :@children[yo:Sass::Tree::CommentNode:@value"&/**
+ * @class Ext.panel.Panel
+ */:@silent0;i:@lines[ ;	@:
+@loud0;
+[ o;;"å/* TODO: setting this probably doesn't work well, since border-radius is typically
+ * reserved for framed-panels - should we remove this? */;i ;i
+;[ ;	@;0;
+[ o:Sass::Tree::VariableNode:@guarded"!default;i:
+@expro:Sass::Script::String	:
+@type:identifier;"	null;i;	@;	@;
+[ :
+@name"panel-border-radiuso;;"C/**
+ * @var {number}
+ * The default border-width of Panels
+ */;0;i;[ ;	@;0;
+[ o;;"!default;i;o:Sass::Script::Number:@denominator_units[ ;i;i:@numerator_units["px;	@:@original"1px;	@;
+[ ;"panel-border-widtho;;"8/**
+ * @var {color}
+ * The base color of Panels
+ */;0;i;[ ;	@;0;
+[ o;;"!default;i;o:Sass::Script::Variable	;i;	@:@underscored_name"base_color;"base-color;	@;
+[ ;"panel-base-coloro;;"B/**
+ * @var {color}
+ * The default border-color of Panels
+ */;0;i;[ ;	@;0;
+[ o;;"!default;i;o;	;i;	@;"panel_base_color;"panel-base-color;	@;
+[ ;"panel-border-coloro;;"ø/**
+ * @var {$border-width-threshold}
+ * The maximum width a Panel's border can be before resizer handles are embedded into the borders using negative absolute positions.
+ *
+ * This defaults to 2, so that in the classic theme which uses 1 pixel borders, resize handles are in the content area
+ * within the border as they always have been.
+ *
+ * In the Neptune theme, the handles are embedded into the 5 pixel wide borders of any framed panel.
+ */;0;i ;[ ;	@;0;
+[ o;;"!default;i);o;;[ ;i;i);[ ;	@;"2;	@;
+[ ;"border-width-thresholdo;;"p/* ===============================
+ * ========= PANEL BODY ==========
+ * =============================== */;i ;i+;[ ;	@;0;
+[ o;;"C/**
+ * @var {string}
+ * The default border-style of Panels
+ */;0;i.;[ ;	@;0;
+[ o;;"!default;i2;o;	;;;"
+solid;i2;	@;	@;
+[ ;"panel-body-border-styleo;;"K/**
+ * @var {color}
+ * The default body background-color of Panels
+ */;0;i4;[ ;	@;0;
+[ o;;"!default;i8;o:Sass::Script::Color	;0;i8;	@:@attrs{	:rediˇ:
+alphai:
+greeniˇ:	blueiˇ;	@;
+[ ;" panel-body-background-coloro;;"O/**
+ * @var {color}
+ * The default color of text inside a Panel's body
+ */;0;i:;[ ;	@;0;
+[ o;;"!default;i>;o;	;0;i>;	@;{	;i ; i;!i ;"i ;	@;
+[ ;"panel-body-coloro;;"J/**
+ * @var {color}
+ * The default border-color of the Panel body
+ */;0;i@;[ ;	@;0;
+[ o;;"!default;iD;o;	;iD;	@;"panel_border_color;"panel-border-color;	@;
+[ ;"panel-body-border-coloro;;"K/**
+ * @var {number}
+ * The default border-width of the Panel body
+ */;0;iF;[ ;	@;0;
+[ o;;"!default;iJ;o;;[ ;i;iJ;["px;	@;"1px;	@;
+[ ;"panel-body-border-widtho;;"H/**
+ * @var {number}
+ * The default font-size of the Panel body
+ */;0;iL;[ ;	@;0;
+[ o;;"!default;iP;o;	;iP;	@;"font_size;"font-size;	@;
+[ ;"panel-body-font-sizeo;;"J/**
+ * @var {string}
+ * The default font-weight of the Panel body
+ */;0;iR;[ ;	@;0;
+[ o;;"!default;iV;o;	;;;"normal;iV;	@;	@;
+[ ;"panel-body-font-weighto;;"Y/**
+ * @var {number}
+ * The space between the Panel {@link Ext.panel.Tool Tools}
+ */;0;iX;[ ;	@;0;
+[ o;;"!default;i\;o;;[ ;i	;i\;["px;	@;"4px;	@;
+[ ;"panel-tool-spacingo;;"d/**
+ * @var {string}
+ * The background sprite to use for Panel {@link Ext.panel.Tool Tools}
+ */;0;i^;[ ;	@;0;
+[ o;;"!default;ib;o;	;:string;"tools/tool-sprites;ib;	@;	@;
+[ ;" panel-tool-background-imageo;;"B/**
+ * @var {number}
+ * The border-width of Panel Headers
+ */;0;id;[ ;	@;0;
+[ o;;"!default;ih;o;	;ih;	@;"panel_border_width;"panel-border-width;	@;
+[ ;"panel-header-border-widtho;;"B/**
+ * @var {string}
+ * The border-style of Panel Headers
+ */;0;ij;[ ;	@;0;
+[ o;;"!default;in;o;	;;;"
+solid;in;	@;	@;
+[ ;"panel-header-border-styleo;;"B/**
+ * @var {number/list}
+ * The padding of Panel Headers
+ */;0;ip;[ ;	@;0;
+[ o;;"!default;it;o:Sass::Script::List	;[o;;[ ;i	;it;["px;	@;"4pxo;;[ ;i
+;it;["px;	@;"5px;it:@separator:
+space;	@;	@;
+[ ;"panel-header-paddingo;;"?/**
+ * @var {number}
+ * The font-size of Panel Headers
+ */;0;iv;[ ;	@;0;
+[ o;;"!default;iz;o;	;iz;	@;"font_size;"font-size;	@;
+[ ;"panel-header-font-sizeo;;"A/**
+ * @var {number}
+ * The line-height of Panel Headers
+ */;0;i|;[ ;	@;0;
+[ o;;"!default;i{;o;;[ ;i;i{;["px;	@;"	16px;	@;
+[ ;"panel-header-line-heighto;;"A/**
+ * @var {string}
+ * The font-weight of Panel Headers
+ */;0;i};[ ;	@;0;
+[ o;;"!default;iÅ;o;	;;;"	bold;iÅ;	@;	@;
+[ ;"panel-header-font-weighto;;"A/**
+ * @var {string}
+ * The font-family of Panel Headers
+ */;0;iÉ;[ ;	@;0;
+[ o;;"!default;iá;o;	;iá;	@;"font_family;"font-family;	@;
+[ ;"panel-header-font-familyo;;"D/**
+ * @var {string}
+ * The text-transform of Panel Headers
+ */;0;iâ;[ ;	@;0;
+[ o;;"!default;iç;o;	;;;"	none;iç;	@;	@;
+[ ;" panel-header-text-transformo;;"T/**
+ * @var {number/list}
+ * The padding of the Panel Header's text element
+ */;0;iè;[ ;	@;0;
+[ o;;"!default;iì;o;;@A;i ;iì;[ ;	@;"0;	@;
+[ ;"panel-header-text-paddingo;;"Á/**
+ * @var {string/list}
+ * The background-gradient of the Panel Header. Can be either the name of a predefined
+ * gradient or a list of color stops. Used as the `$type` parameter for
+ * {@link Global_CSS#background-gradient}.
+ */;0;iï;[ ;	@;0;
+[ o;;"!default;iõ;o;	;;;"	null;iõ;	@;	@;
+[ ;"%panel-header-background-gradiento;;"D/**
+ * @var {color}
+ * The border-color of the Panel Header
+ */;0;iù;[ ;	@;0;
+[ o;;"!default;i°;o;	;i°;	@;"panel_border_color;"panel-border-color;	@;
+[ ;"panel-header-border-coloro;;"J/**
+ * @var {color}
+ * The inner border-color of the Panel Header
+ */;0;i£;[ ;	@;0;
+[ o;;"!default;iß;o;	;0;iß;	@;{	;iˇ; i;!iˇ;"iˇ;	@;
+[ ;"$panel-header-inner-border-coloro;;"K/**
+ * @var {number}
+ * The inner border-width of the Panel Header
+ */;0;i©;[ ;	@;0;
+[ o;;"!default;i≠;o;;@A;i ;i≠;[ ;	@;"0;	@;
+[ ;"$panel-header-inner-border-widtho;;"B/**
+ * @var {color}
+ * The text color of the Panel Header
+ */;0;iØ;[ ;	@;0;
+[ o;;"!default;i≥;o;	;i≥;	@;"
+color;"
+color;	@;
+[ ;"panel-header-coloro;;"H/**
+ * @var {color}
+ * The background-color of the Panel Header
+ */;0;iµ;[ ;	@;0;
+[ o;;"!default;iπ;o;	;iπ;	@;"panel_base_color;"panel-base-color;	@;
+[ ;""panel-header-background-coloro;;"C/**
+ * @var {number}
+ * The width of the Panel Header icon
+ */;0;iª;[ ;	@;0;
+[ o;;"!default;iø;o;;[ ;i;iø;["px;	@;"	16px;	@;
+[ ;"panel-header-icon-widtho;;"D/**
+ * @var {number}
+ * The height of the Panel Header icon
+ */;0;i¡;[ ;	@;0;
+[ o;;"!default;i≈;o;;[ ;i;i≈;["px;	@;"	16px;	@;
+[ ;"panel-header-icon-heighto;;"Q/**
+ * @var {number}
+ * The space between the Panel Header icon and text
+ */;0;i«;[ ;	@;0;
+[ o;;"!default;iÀ;o;;[ ;i	;iÀ;["px;	@;"4px;	@;
+[ ;"panel-header-icon-spacingo;;"P/**
+ * @var {list}
+ * The background-position of  the Panel Header icon
+ */;0;iÕ;[ ;	@;0;
+[ o;;"!default;i—;o;$	;[o;	;;;"center;i—;	@o;	;;;"center;i—;	@;i—;%;&;	@;	@;
+[ ;"*panel-header-icon-background-positiono;;"H/**
+ * @var {color}
+ * The color of the Panel Header glyph icon
+ */;0;i”;[ ;	@;0;
+[ o;;"!default;i◊;o;	;i◊;	@;"panel_header_color;"panel-header-color;	@;
+[ ;"panel-header-glyph-coloro;;"K/**
+ * @var {number}
+ * The opacity of the Panel Header glyph icon
+ */;0;iŸ;[ ;	@;0;
+[ o;;"!default;i›;o;;@A;f0.5;i›;[ ;	@;"0.5;	@;
+[ ;"panel-header-glyph-opacityo;;"C/**
+ * @var {color}
+ * The base color of the framed Panels
+ */;0;iﬂ;[ ;	@;0;
+[ o;;"!default;i„;o;	;i„;	@;"panel_base_color;"panel-base-color;	@;
+[ ;"panel-frame-base-coloro;;"C/**
+ * @var {number}
+ * The border-radius of framed Panels
+ */;0;iÂ;[ ;	@;0;
+[ o;;"!default;iÈ;o;;[ ;i	;iÈ;["px;	@;"4px;	@;
+[ ;"panel-frame-border-radiuso;;"B/**
+ * @var {number}
+ * The border-width of framed Panels
+ */;0;iÎ;[ ;	@;0;
+[ o;;"!default;iÔ;o;;[ ;i;iÔ;["px;	@;"1px;	@;
+[ ;"panel-frame-border-widtho;;"B/**
+ * @var {string}
+ * The border-style of framed Panels
+ */;0;iÒ;[ ;	@;0;
+[ o;;"!default;iı;o;	;;;"
+solid;iı;	@;	@;
+[ ;"panel-frame-border-styleo;;"=/**
+ * @var {number}
+ * The padding of framed Panels
+ */;0;i˜;[ ;	@;0;
+[ o;;"!default;i˚;o;;[ ;i	;i˚;["px;	@;"4px;	@;
+[ ;"panel-frame-paddingo;;"E/**
+ * @var {color}
+ * The background-color of framed Panels
+ */;0;i˝;[ ;	@;0;
+[ o;;"!default;i;o;	;0;i;	@;{	;iˇ; i;!iˇ;"iˇ;	@;
+[ ;"!panel-frame-background-coloro;;"A/**
+ * @var {color}
+ * The border-color of framed Panels
+ */;0;i;[ ;	@;0;
+[ o;;"!default;i;o;	;i;	@;"panel_border_color;"panel-border-color;	@;
+[ ;"panel-frame-border-coloro;;"V/**
+ * @var {number}
+ * The border-width of the body element of framed Panels
+ */;0;i	;[ ;	@;0;
+[ o;;"!default;i;o;;[ ;i;i;["px;	@;"1px;	@;
+[ ;""panel-frame-body-border-widtho;;"I/**
+ * @var {number}
+ * The border-width of framed Panel Headers
+ */;0;i;[ ;	@;0;
+[ o;;"!default;i;o;	;i;	@;"panel_header_border_width;"panel-header-border-width;	@;
+[ ;"$panel-frame-header-border-widtho;;"N/**
+ * @var {color}
+ * The inner border-color of framed Panel Headers
+ */;0;i;[ ;	@;0;
+[ o;;"!default;i;o;	;0;i;	@;{	;iˇ; i;!iˇ;"iˇ;	@;
+[ ;"*panel-frame-header-inner-border-coloro;;"O/**
+ * @var {number}
+ * The inner border-width of framed Panel Headers
+ */;0;i;[ ;	@;0;
+[ o;;"!default;i;o;;@A;i ;i;[ ;	@;"0;	@;
+[ ;"*panel-frame-header-inner-border-widtho;;"I/**
+ * @var {number/list}
+ * The padding of framed Panel Headers
+ */;0;i!;[ ;	@;0;
+[ o;;"!default;i%;o;	;i%;	@;"panel_header_padding;"panel-header-padding;	@;
+[ ;"panel-frame-header-paddingo;;"K/**
+ * @var {number}
+ * The opacity of ghost Panels while dragging
+ */;0;i';[ ;	@;0;
+[ o;;"!default;i+;o;;@A;f0.5;i+;[ ;	@;"0.5;	@;
+[ ;"panel-ghost-opacityo;;"ê/**
+ * @var {string}
+ * The direction to strech the background-gradient of top docked Headers when slicing images
+ * for IE using Sencha Cmd
+ */;0;i-;[ ;	@;0;
+[ o;;"!default;i2;o;	;;;"bottom;i2;	@;	@;
+[ ;"!panel-background-stretch-topo;;"ì/**
+ * @var {string}
+ * The direction to strech the background-gradient of bottom docked Headers when slicing images
+ * for IE using Sencha Cmd
+ */;0;i4;[ ;	@;0;
+[ o;;"!default;i9;o;	;;;"top;i9;	@;	@;
+[ ;"$panel-background-stretch-bottomo;;"í/**
+ * @var {string}
+ * The direction to strech the background-gradient of right docked Headers when slicing images
+ * for IE using Sencha Cmd
+ */;0;i;;[ ;	@;0;
+[ o;;"!default;i@;o;	;;;"	left;i@;	@;	@;
+[ ;"#panel-background-stretch-righto;;"ë/**
+ * @var {string}
+ * The direction to strech the background-gradient of left docked Headers when slicing images
+ * for IE using Sencha Cmd
+ */;0;iB;[ ;	@;0;
+[ o;;"!default;iG;o;	;;;"
+right;iG;	@;	@;
+[ ;""panel-background-stretch-lefto;;"X/**
+ * @var {boolean}
+ * True to include neptune style border management rules.
+ */;0;iI;[ ;	@;0;
+[ o;;"!default;iM;o:Sass::Script::Bool;F;iM;	@;	@;
+[ ;"*panel-include-border-management-ruleso;;"$/**
+ * @var {color}
+ * The color to apply to the border that wraps the body and docked items in a framed
+ * panel. The presence of the wrap border in a framed panel is controlled by the
+ * {@link #border} config. Only applicable when `$panel-include-border-management-rules` is
+ * `true`.
+ */;0;iO;[ ;	@;0;
+[ o;;"!default;iV;o;	;iV;	@;"panel_border_color;"panel-border-color;	@;
+[ ;"panel-wrap-border-coloro;;"%/**
+ * @var {number}
+ * The width to apply to the border that wraps the body and docked items in a framed
+ * panel. The presence of the wrap border in a framed panel is controlled by the
+ * {@link #border} config. Only applicable when `$panel-include-border-management-rules` is
+ * `true`.
+ */;0;iX;[ ;	@;0;
+[ o;;"!default;i_;o;;[ ;i;i_;["px;	@;"1px;	@;
+[ ;"panel-wrap-border-widtho;;"H/**
+ * @var {boolean}
+ * True to include the "default" panel UI
+ */;0;ia;[ ;	@;0;
+[ o;;"!default;ie;o;	;ie;	@;"include_default_uis;"include-default-uis;	@;
+[ ;"include-panel-default-uio;;"O/**
+ * @var {boolean}
+ * True to include the "default-framed" panel UI
+ */;0;ig;[ ;	@;0;
+[ o;;"!default;ik;o;	;ik;	@;"include_default_uis;"include-default-uis;	@;
+[ ;"$include-panel-default-framed-ui
